@@ -12,7 +12,7 @@ RUN mkdir /app
 
 WORKDIR /app
 #Pending fix to use the latest version from GitHub
-RUN wget https://github.com/pothosware/SoapySDR/archive/soapy-sdr-0.7.2.tar.gz
+RUN wget  --ca-certificate=/etc/ssl/certs/ca-certificates.crt https://github.com/pothosware/SoapySDR/archive/soapy-sdr-0.7.2.tar.gz
 RUN tar -xvf soapy-sdr-0.7.2.tar.gz
 RUN mkdir /app/SoapySDR-soapy-sdr-0.7.2/build
 WORKDIR /app/SoapySDR-soapy-sdr-0.7.2/build
