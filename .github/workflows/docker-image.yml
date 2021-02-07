@@ -30,7 +30,6 @@ jobs:
           push: true
           tags: danieldona/mlrpt:latest
           context: .
-          platforms: all 
           file: ./Dockerfile
 
       - name: Image
