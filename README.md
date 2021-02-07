@@ -1,43 +1,22 @@
 # mlrpt
 `mlrpt` is an application originally developed by [Neoklis Kyriazis](http://www.5b4az.org/). `mlrpt` is an universal receiver, demodulator and decoder of LRPT weather satellites images for Linux systems which works in console.
 
+This fork is developed by Daniel Doña
+
 ## Requirements
 ### Hardware
-`mlrpt` uses [SoapySDR](https://github.com/pothosware/SoapySDR) library to communicate with SDR hardware. So in principle any hardware supported by SoapySDR should work. However, only [RTL-SDR](https://www.rtl-sdr.com/buy-rtl-sdr-dvb-t-dongles/), [Airspy Mini](https://airspy.com/airspy-mini) and [Airspy R2](https://airspy.com/airspy-r2) units were tested quite well.
+This fork is ready to use RTL-SDR, if you want to use other hardware, use the main proyect as reference
 
-### Software
-In order to use `mlrpt` you should have the following dependencies satisfied:
-- `SoapySDR` (install proper modules to get support for your hardware)
-- `libjpeg-turbo`
-- `libconfig`
-
-To build `mlrpt` be sure to have the following dependencies installed:
-- `gcc` (4.8 or higher)
-- `make`
-- `cmake` (3.12 or higher)
 
 ## Installation
-First of all check if `mlrpt` is already in your distro repository. For example, on Arch Linux you can install it [from AUR](https://aur.archlinux.org/packages/mlrpt/). If there is no package for your distro then you must compile it by hands.
 
-### Building from source code
-Download latest stable release or clone `master` branch directly:
-```
-git clone https://github.com/dvdesolve/mlrpt.git
-cd mlrpt
-```
+Just use the Docker image:
 
-Prepare your build (for example, the following will install `mlrpt` into `/usr` instead of `/usr/local`):
-```
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-```
+```docker run -it -it --device=/dev/bus/usb mlrpt:latest mlrpt -c /usr/local/share/mlrpt/examples/config/Meteor-M2.cfg```
 
-Build and install `mlrpt`:
-```
-make
-sudo make install
-```
+If you want to limit even more the access of this application, you can specify the exact device you are using, for example:
+
+```docker run -it -it --device=/dev/bus/usb/002/020 mlrpt:latest mlrpt -c /usr/local/share/mlrpt/examples/config/Meteor-M2.cfg```
 
 Now you're ready to use `mlrpt`.
 
