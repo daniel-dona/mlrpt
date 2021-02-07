@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-RUN apt-get install git cmake wget libpython2-dev python-numpy swig g++ rtl-sdr librtlsdr-dev pkgconf libturbojpeg0-dev libconfig-dev -y
+RUN apt-get install git cmake wget libpython2-dev python-numpy swig g++ rtl-sdr librtlsdr-dev pkgconf libturbojpeg0-dev libconfig-dev ca-certificates -y
 
 RUN mkdir /app
 
