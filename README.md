@@ -12,11 +12,11 @@ This fork is ready to use RTL-SDR, if you want to use other hardware, use the ma
 
 Just use the Docker image:
 
-```docker run -it --device=/dev/bus/usb mlrpt:latest mlrpt -c /usr/local/share/mlrpt/examples/config/Meteor-M2.cfg```
+```docker run -it --device=/dev/bus/usb danieldona/mlrpt -c /usr/share/mlrpt/examples/config/Meteor-M2.cfg```
 
 If you want to limit even more the access of this application, you can specify the exact device you are using, for example:
 
-```docker run -it --device=/dev/bus/usb/002/020 mlrpt:latest mlrpt -c /usr/local/share/mlrpt/examples/config/Meteor-M2.cfg```
+```docker run -it --device=/dev/bus/usb/002/020 danieldona/mlrpt -c /usr/share/mlrpt/examples/config/Meteor-M2.cfg```
 
 On Linux use `lsusb` to find the device:
 
